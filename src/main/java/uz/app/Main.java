@@ -12,9 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
-import java.net.URI;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -29,7 +27,7 @@ public class Main {
     static Scanner strScanner = new Scanner(System.in);
     static HttpClient client = HttpClient.newHttpClient();
     @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(String[] args) throws URISyntaxException, MalformedURLException {
 
         HttpRequest request = HttpRequest.newBuilder().GET()
                 .headers("","").uri(new URI("https://cbu.uz/oz/arkhiv-kursov-valyut/json/")).build();
